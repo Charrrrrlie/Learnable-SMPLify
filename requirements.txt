@@ -1,0 +1,10 @@
+easydict
+tqdm
+einops
+opencv-python
+chumpy
+numpy==1.23.1
+
+matplotlib
+pyyaml
+smplx
