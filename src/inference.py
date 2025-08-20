@@ -79,13 +79,12 @@ if __name__ == '__main__':
 
     dataset = 'AMASS' if len(sys.argv) < 3 else sys.argv[2]
     first_frame_constraint = True
-    rigid_update = False
 
     save_folder = os.path.join('output', 'netbody25', dataset)
     os.makedirs(save_folder, exist_ok=True)
 
     batch_size = 1
-    sample_num = 50 if len(sys.argv) < 4 else int(sys.argv[3])
+    sample_ratio = 50 if len(sys.argv) < 4 else int(sys.argv[3])
     assert batch_size == 1, 'only support batch size 1 for per-sequence inference'
     worker = 1
 
@@ -125,7 +124,7 @@ if __name__ == '__main__':
 
     with torch.no_grad():
         for item_idx, item in enumerate(tqdm.tqdm(inference_dataloader, desc='Inference')):
-            if item_idx % sample_num != 0:
+            if item_idx % sample_ratio != 0:
                 continue
 
             for key, value in item.items():
@@ -142,8 +141,7 @@ if __name__ == '__main__':
             pred_verts = process_single_seq(item,
                                             seq_len,
                                             net,
-                                            first_frame_constraint=first_frame_constraint,
-                                            rigid_update=rigid_update)
+                                            first_frame_constraint=first_frame_constraint)
 
             gt_smpl = net.human_model.layer['neutral'](
                 betas=item['betas'].squeeze(0)[1:, :10],

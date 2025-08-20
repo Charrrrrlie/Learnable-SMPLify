@@ -1,11 +1,11 @@
 # Learnable SMPLify: A Neural Solution for Optimization-Free Human Pose Inverse Kinematics
 
-#### <p align="center">[arXiv Paper](https://arxiv.org/abs/TBD)</p>
+#### <p align="center">[arXiv Paper](https://arxiv.org/abs/2508.13562)</p>
 
 
 ![framework](assets/framework.png)
 
-``TL;DR``: Given X_{t-s} and X_{t} 3D keypoints, 
+``TL;DR`` Given X_{t-s} and X_{t} 3D keypoints, 
 calculate residual SMPL parameters from t-s to t.
 
 
@@ -32,13 +32,28 @@ You can get logs, tensorboard and checkpoints in the corresponding `logs/<MODEL_
 To evaluate the model, run the following command:
 
 ```
-torchrun --nproc-per-node <NUM_GPUS> main.py --config configs/net_<DATASET>.yaml --eval --checkpoint <PATH_TO_CHECKPOINT>
+torchrun --nproc-per-node <NUM_GPUS> main.py --config configs/net.yaml --eval --checkpoint <PATH_TO_CHECKPOINT>
+```
+
+### Sequential Inference
+To run sequential inference, you can use the following command:
+
+```
+python inference.py <PATH_TO_CHECKPOINT> (<DATASET_NAME> <SAMPLE_RATIO>)
 ```
 
 ## Citation
 If you find this work useful in your research, please consider citing:
 
 ```
+@misc{LearnableSMPLify,
+      title={Learnable SMPLify: A Neural Solution for Optimization-Free Human Pose Inverse Kinematics},
+      author={Yuchen, Yang and Linfeng, Dong and Wei, Wang and Zhihang, Zhong and Xiao, Sun},
+      year={2025},
+      eprint={2508.13562},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
+}
 ```
 
 ## Acknowledgement
