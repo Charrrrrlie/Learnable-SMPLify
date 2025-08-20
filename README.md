@@ -8,10 +8,6 @@
 ``TL;DR`` Given X_{t-s} and X_{t} 3D keypoints, 
 calculate residual SMPL parameters from t-s to t.
 
-
-## TODO
-update arxiv link, add citation
-
 ## Preparation
 Refer to [PREPARATION.md](doc/PREPARATION.md) for installation and data preparation details.
 
