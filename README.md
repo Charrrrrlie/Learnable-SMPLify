@@ -1,6 +1,6 @@
 # Learnable SMPLify: A Neural Solution for Optimization-Free Human Pose Inverse Kinematics
 
-#### <p align="center">[arXiv Paper](https://arxiv.org/abs/2508.13562)</p>
+#### <p align="center">[arXiv Paper](https://arxiv.org/abs/2508.13562) | [Hugging Face](https://huggingface.co/Charlie019/Learnable-SMPLify)</p>
 
 
 ![framework](assets/framework.png)
@@ -12,7 +12,7 @@ calculate residual SMPL parameters from t-s to t.
 Refer to [PREPARATION.md](doc/PREPARATION.md) for installation and data preparation details.
 
 ## Checkpoints
-The pretrained model checkpoint is available at [Google Drive](https://drive.google.com/drive/folders/1oyG2gbB3EMcc6NgTIT1p1uJ_Em0dJwXz?usp=sharing).
+The pretrained model checkpoint is available at [Google Drive](https://drive.google.com/drive/folders/1oyG2gbB3EMcc6NgTIT1p1uJ_Em0dJwXz?usp=sharing) and [Hugging Face](https://huggingface.co/Charlie019/Learnable-SMPLify/blob/main/best_ckpt.pth.tar).
 
 ## Usage
 ### Training
